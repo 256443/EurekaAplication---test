@@ -31,7 +31,8 @@ public class EmployeeController {
         return employees;
     }
 
-    @RequestMapping("/add_employee")
+
+    @RequestMapping(value = "/add_employee")
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
     public Employee save(@RequestBody Employee employee){
         Employee savedEmployee = employeeService.save(employee);
