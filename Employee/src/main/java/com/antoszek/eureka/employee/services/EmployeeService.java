@@ -30,10 +30,19 @@ public class EmployeeService {
         List<Employee> employees = Lists.newArrayList(employeeIterable);
         return employees;
     }
-    public Optional<Employee> findById(Long id) {
+//    public Employee finndById(Long id){
+//        Iterable<Employee> employeeIterable = employeeRepository.findAll();
+//        List<Employee> employees = Lists.newArrayList(employeeIterable);
+//        for (Employee e: employees){
+//            if(e.getId().equals(id))
+//                return e;
+//        }
+//        return null;
+//    }
+    public Employee findById(Long id) {
         Optional<Employee> employee = employeeRepository.findById(id);
         if (employee.isPresent()) {
-            return employee;
+            return employee.get();
         }
         return null;
     }
